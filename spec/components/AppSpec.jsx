@@ -48,7 +48,7 @@ describe('App', function() {
     });
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
     beforeEach(function() {
       app = renderIntoDocument(
         <App />
@@ -57,7 +57,7 @@ describe('App', function() {
 
     it('should load live data when app is initialized', function() {
       var videoEntryTitleElements = scryRenderedDOMComponentsWithClass(app, 'video-list-entry-title');
-
+      console.log(fakeVideoData);
       videoEntryTitleElements.forEach((videoEntryTitle, i) =>
         expect(videoEntryTitle.innerHTML).to.equal(fakeVideoData[i].snippet.title)
       );
